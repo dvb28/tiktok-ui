@@ -6,6 +6,8 @@ $mainFont: 'IBM Plex Sans', sans-serif;
 :root {
     --default-layout-header-height: 60px;
     --default-layout-width: 1150px;
+    --black: black;
+    --text-color: #333;
 }
 
 * {
@@ -21,4 +23,15 @@ html {
 body {
     font-family: $mainFont;
     text-rendering: optimizeSpeed;
+}
+
+button, input, [tabindex] {
+    outline: none;
+    border: none;
+}
+
+
+a[href] {
+    color: var(--text-color);
+    text-decoration: none;
 }
