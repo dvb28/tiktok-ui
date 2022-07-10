@@ -1,0 +1,13 @@
+@import 'normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;400;500;600;700&display=swap');
+
+$mainFont: 'IBM Plex Sans', sans-serif;
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: $mainFont;
+    text-rendering: optimizeSpeed;
+}
