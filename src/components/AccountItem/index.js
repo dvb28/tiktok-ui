@@ -9,7 +9,7 @@ const cx = classNames.bind(styles);
 function AccountItem() {
     return (
         <div className={cx('wrapper')}>
-            <img className={cx('avatar')} src={Image}></img>
+            <img src={Image} className={cx('avatar')}></img>
             <div className={cx('info')}>
                 <h4 className={cx('name')}>
                     <span>Đào Việt Bảo</span>
