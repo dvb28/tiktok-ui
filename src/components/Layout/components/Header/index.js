@@ -1,9 +1,10 @@
+/* eslint-disable jsx-a11y/alt-text */
 import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import styles from './Header.module.scss';
 import images from '~/accest/img';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Image from '~/accest/img/265297976_1298075467280886_1663868180763984556_n.jpg';
+import Image from '~/components/Image';
 import {
     faCircleXmark,
     faSpinner,
@@ -12,9 +13,6 @@ import {
     faEarthAsia,
     faCircleQuestion,
     faKeyboard,
-    faMessage,
-    faCloudArrowUp,
-    faPaperPlane,
     faUser,
     faGear,
     faSignOut,
@@ -27,6 +25,7 @@ import Menu from '~/components/Popper/Menu';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import { faBitcoin } from '@fortawesome/free-brands-svg-icons';
+import { InboxIcon, MessageIcon, UploadIcon } from '~/components/Icon';
 const cx = classNames.bind(styles);
 
 const MENU_ITEMS = [
@@ -61,7 +60,7 @@ const MENU_ITEMS = [
 ];
 function Header() {
     const [searchResult, setSearchResult] = useState([]);
-
+    console.log(searchResult);
     const currrentUser = true;
     useEffect(() => {
         setTimeout(() => {
@@ -107,7 +106,7 @@ function Header() {
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
                 <div className={cx('logo')}>
-                    <img src={images.logo.default}></img>
+                    <img src={images.logo}></img>
                 </div>
                 <HeadlessTippy
                     interactive
@@ -141,31 +140,31 @@ function Header() {
                         <>
                             <Tippy delay={[0, 200]} content="Upload" placement="bottom">
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faCloudArrowUp}></FontAwesomeIcon>
+                                    <UploadIcon></UploadIcon>
                                 </button>
                             </Tippy>
 
-                            <Tippy delay={[0, 200]} content="Send" placement='bottom'>
+                            <Tippy offset={[0, 13]} delay={[0, 200]} content="Send" placement='bottom'>
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faPaperPlane}></FontAwesomeIcon>
+                                    <MessageIcon></MessageIcon>
                                 </button>
                             </Tippy>
 
                             <Tippy delay={[0, 200]} content="Message" placement='bottom'>
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faMessage}></FontAwesomeIcon>
+                                    <InboxIcon></InboxIcon>
                                 </button>
                             </Tippy>
                         </>
                     ) : (
                         <>
-                            <Button text> Upload </Button>
-                            <Button primary> Log in </Button>
+                            <Button text>Upload</Button>
+                            <Button primary>Log in</Button>
                         </>
                     )}
                     <Menu items={currrentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currrentUser ? (
-                            <img src={Image} className={cx('user-avatar')} alt="Đào Việt Bảo"></img>
+                            <Image src={images.avatar} className={cx('user-avatar')} alt="Đào Việt Bảo"></Image>
                         ) : (
                             <button className={cx('more-btn')}>
                                 <FontAwesomeIcon icon={faEllipsisVertical}></FontAwesomeIcon>

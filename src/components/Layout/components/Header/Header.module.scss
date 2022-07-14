@@ -94,7 +94,6 @@
 .action {
     display: flex;
     align-items: center;
-
     &-btn {
         color: #161823;
         background-color: transparent;
@@ -123,5 +122,4 @@
     object-fit: cover;
     border-radius: 50%;
     margin-left: 12px;
-    cursor: pointer;
 }

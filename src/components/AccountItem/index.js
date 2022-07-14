@@ -1,15 +1,16 @@
+/* eslint-disable jsx-a11y/alt-text */
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames/bind";
 import styles from './AccountItem.module.scss';
-import Image from '~/accest/img/265297976_1298075467280886_1663868180763984556_n.jpg'
+import images from '~/accest/img'
 
 const cx = classNames.bind(styles);
 
 function AccountItem() {
     return (
         <div className={cx('wrapper')}>
-            <img src={Image} className={cx('avatar')}></img>
+            <img src={images.avatar} className={cx('avatar')}></img>
             <div className={cx('info')}>
                 <h4 className={cx('name')}>
                     <span>Đào Việt Bảo</span>
